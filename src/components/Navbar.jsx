@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
   return (
     <nav className="navbar glass-card">
-      <div className="logo">Portfolio.</div>
+      <div className="logo">NC.</div>
       <div className="nav-links">
         <a href="#home" className="active">Home</a>
         <a href="#skills">Skills</a>

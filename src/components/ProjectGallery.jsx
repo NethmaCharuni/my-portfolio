@@ -5,6 +5,103 @@ const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
+    //* UI/UX projects
+    {
+      title: 'AI-Powered Analytics Dashboard',
+      category: 'UI/UX',
+      img: '/assets/AI.png',
+      description: 'A modern, AI-integrated analytics dashboard that displays key metrics like revenue, active users, and conversion rates. This dashboard helps businesses make data-driven decisions with real-time insights.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Real-time analytics display',
+        'AI-powered recommendations',
+        'Smart notification system',
+        'User behavior tracking',
+        'Customizable dashboard widgets',
+        'Dark/Light mode support'
+      ],
+      figmaUrl: 'https://www.figma.com/design/unL66lW6wFGhnAJDmnn6io/AI-Personalized-Interfaces?node-id=0-1&t=YOJKGhFI8XyEXa1i-1'
+    },
+    {
+      title: 'Karusan Travels - Booking App',
+      category: 'UI/UX',
+      img: '/assets/2.png',
+      description: 'A complete mobile app design for "Karusan Travels" agency. Includes user authentication flows, trip schedules, and a seamless booking experience with a premium dark mode interface.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'User authentication flow (10+ screens)',
+        'Dark/Light mode support',
+        'Trip scheduling interface',
+        'Notification system',
+        'User profile management'
+      ],
+      figmaUrl: 'https://www.figma.com/design/ZS4utf9pNNkLRjDFMHMONF/Karusan-mobile-app?node-id=0-1&t=YOJKGhFI8XyEXa1i-1'
+    },
+    {
+      title: 'Mobile Authentication Interface',
+      category: 'UI/UX',
+      img: '/assets/4.png',
+      description: 'Clean and modern authentication flows for mobile applications. This login interface prioritizes user experience with clear form fields and simple navigation.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Clean form design',
+        'Social media integration',
+        'Email validation',
+        'Responsive mobile layout',
+        'User-friendly error handling'
+      ],
+      figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?t=YOJKGhFI8XyEXa1i-1'
+    },
+    {
+      title: 'Mobile Authentication Flow',
+      category: 'UI/UX',
+      img: '/assets/5.png',
+      description: 'The signup and onboarding flow for mobile applications, designed to reduce friction and encourage user conversion through a guided step-by-step process.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Step-by-step onboarding',
+        'Password strength meter',
+        'Terms of service integration',
+        'Responsive mobile layout',
+        'Form state persistence'
+      ],
+      figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?node-id=7-60&t=YOJKGhFI8XyEXa1i-1'
+    },
+    {
+      title: 'TalkGov - Government Services Portal',
+      category: 'UI/UX',
+      img: '/assets/6.png',
+      description: 'A user-friendly web interface designed for South Australian citizens to access government services easily, search for offices, and track service requests.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Service search functionality',
+        'Popular services quick access',
+        'Location-based office finder',
+        'Document checklist generator',
+        'Request tracking system'
+      ],
+      figmaUrl: 'https://www.figma.com/design/f8BVqBylMRxPiuHNqighxm/TalkGov?node-id=0-1&t=hNIZl2LRp1pIT5jH-1'
+    },
+    {
+      title: 'ABC Resort & Spa - Luxury Landing Page',
+      category: 'UI/UX',
+      img: '/assets/7.png',
+      description: 'A sophisticated landing page design for a luxury resort. The minimalistic approach captures the essence of luxury through elegant typography and a calm color palette.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Hero section with call-to-action',
+        'Brand storytelling through typography',
+        'Responsive layout',
+        'Luxury-focused visual hierarchy'
+      ],
+      figmaUrl: 'https://www.figma.com/design/lWvhOmMmGGE4yzXQ5hhGat/design?node-id=1-2&t=4R0Fjr7Od77HWWUt-1'
+    },
     //*mobile app project start
     {
       title: 'PerimeterCalculator',
@@ -107,11 +204,39 @@ const ProjectGallery = () => {
       img: '/assets/10.jpg'
     },
     {
+      title: 'Digital Branding Concept',
+      software: 'Photoshop',
+      description: 'A modern branding concept utilizing sleek typography and a vibrant color palette to create a memorable visual identity.',
+      category: 'Graphic Design',
+      img: '/assets/11.jpg'
+    },
+    {
+      title: 'Social Media Campaign',
+      software: 'Canva, Photoshop',
+      description: 'Dynamic social media post designs tailored for high engagement, featuring bold imagery and clear call-to-actions.',
+      category: 'Graphic Design',
+      img: '/assets/12.jpg'
+    },
+    {
+      title: 'Corporate Presentation Design',
+      software: 'Photoshop',
+      description: 'Professional presentation slides designed for clarity and impact, incorporating consistent brand elements and clean layouts.',
+      category: 'Graphic Design',
+      img: '/assets/13.jpg'
+    },
+    {
       title: 'Logo Design - Brand Identity',
-      software: 'Photoshop, Illustrator',
+      software: 'Photoshop',
       description: 'A minimalist logo design exploring brand identity and modern aesthetics.',
       category: 'Graphic Design',
       img: '/assets/logo1.png'
+    },
+    {
+      title: 'International Mother Language Day',
+      software: 'Photoshop',
+      description: 'Dynamic social media post designs tailored for high engagement, featuring bold imagery and clear call-to-actions.',
+      category: 'Graphic Design',
+      img: '/assets/15.png'
     }
   ];
 
@@ -202,7 +327,10 @@ const ProjectGallery = () => {
                 )}
               </div>
               <div className="modal-info">
-                <span className="project-cat">{selectedProject.category}</span>
+                <div className="modal-meta-header">
+                  <span className="project-cat">{selectedProject.category}</span>
+                  {selectedProject.role && <span className="project-role"><b>Role:</b> {selectedProject.role}</span>}
+                </div>
                 <h2 className="text-gradient">{selectedProject.title}</h2>
 
                 {selectedProject.software && (
@@ -221,6 +349,17 @@ const ProjectGallery = () => {
                   <p>{selectedProject.description}</p>
                 </div>
 
+                {selectedProject.features && (
+                  <div className="project-features">
+                    <h4>Key Features</h4>
+                    <ul className="features-list">
+                      {selectedProject.features.map((feature, idx) => (
+                        <li key={idx}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {selectedProject.githubUrl && (
                   <div style={{ marginTop: '20px' }}>
                     <a
@@ -230,6 +369,19 @@ const ProjectGallery = () => {
                       className="btn-primary"
                     >
                       View Source Code →
+                    </a>
+                  </div>
+                )}
+
+                {selectedProject.figmaUrl && (
+                  <div style={{ marginTop: '20px' }}>
+                    <a
+                      href={selectedProject.figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      View Figma Design →
                     </a>
                   </div>
                 )}
@@ -499,12 +651,48 @@ const ProjectGallery = () => {
           line-height: 1.2;
         }
 
-        .software-used h4, .project-details h4 {
+        .modal-meta-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+
+        .project-role {
+          font-size: 12px;
+          color: var(--text-secondary);
+        }
+
+        .software-used h4, .project-details h4, .project-features h4 {
           font-size: 14px;
           text-transform: uppercase;
           letter-spacing: 1px;
           color: var(--accent);
           margin-bottom: 12px;
+        }
+
+        .features-list {
+          list-style: none;
+          padding: 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .features-list li {
+          color: var(--text-secondary);
+          font-size: 14px;
+          position: relative;
+          padding-left: 20px;
+        }
+
+        .features-list li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--accent);
+          font-weight: bold;
         }
 
         .software-tags {

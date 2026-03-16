@@ -27,7 +27,7 @@ const Contact = ({ illustrationUrl }) => {
       } else {
         setResultMessage(data.message || "Something went wrong.");
       }
-    } catch (error) {
+    } catch {
       setResultMessage("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
