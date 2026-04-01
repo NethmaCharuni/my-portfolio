@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import uiCv from '../assets/NethmaCharuniUi.pdf';
-import fedCv from '../assets/NethmaCharuniFED.pdf';
-import gdCv from '../assets/NethmaCharuniGD.pdf';
 
 const Hero = ({ avatarUrl }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const cvs = [
-    { label: 'UI/UX Designer', file: uiCv },
-    { label: 'Frontend Developer', file: fedCv },
-    { label: 'Graphic Designer', file: gdCv }
+    { label: 'Nethma Charuni UIUX', file: '/assets/Nethma Charuni UIUX.pdf?v=20260401' },
+    { label: 'Frontend Developer', file: '/assets/NethmaCharuniFED.pdf?v=20260401' },
+    { label: 'Graphic Designer', file: '/assets/NethmaCharuniGD.pdf?v=20260401' }
   ];
 
   return (
@@ -35,7 +32,12 @@ const Hero = ({ avatarUrl }) => {
             {showDropdown && (
               <div className="cv-dropdown glass-card">
                 {cvs.map((cv, index) => (
-                  <a key={index} href={cv.file} download className="dropdown-item">
+                  <a
+                    key={index}
+                    href={cv.file}
+                    download={index === 0 ? "Nethma Charuni UIUX.pdf" : ""}
+                    className="dropdown-item"
+                  >
                     {cv.label}
                   </a>
                 ))}
