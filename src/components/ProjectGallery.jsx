@@ -2,24 +2,41 @@ import React, { useState } from 'react';
 
 const ProjectGallery = () => {
   const [filter, setFilter] = useState('All');
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     //* UI/UX projects
     {
-      title: 'Bank of Ceylon (BOC) - Mobile App Redesign',
+      title: 'University Portal Redesign',
       category: 'UI/UX',
-      img: '/assets/BOC.png',
-      description: 'A comprehensive redesign of the Bank of Ceylon (BOC) mobile banking application. This project focuses on transforming the traditional banking interface into a modern, user-centric digital experience, improving usability and visual hierarchy.',
+      img: '/assets/Student Web Portal.png',
+      description: 'A comprehensive UI/UX case study focused on fixing fragmented navigation and poor feedback loops in academic systems. Using research-driven wireframing and high-fidelity prototyping in Figma, I created an accessible, error-resistant environment for module registration and assignment management.',
       software: 'Figma',
       role: 'UI/UX Designer',
       features: [
-        'Before vs After design comparison',
-        'Streamlined user authentication flow',
-        'Modernized dashboard and navigation',
-        'Simplified transaction and service flows',
-        'Enhanced visual language and accessibility',
-        'User-centric interface optimization'
+        'Research-driven Lo-fi & Hi-fi Wireframing',
+        'Dynamic Student Dashboard with Deadline Tracking',
+        'Module Management with Progress Filtering',
+        'Integrated Assignment Submission System',
+        'Fully Responsive Mobile-First Design',
+        'Accessibility-Focused UI Hierarchy'
+      ],
+      figmaUrl: 'https://www.figma.com/design/J5cLvJghLjo09PkZU4hV3S/UNIVESITY?node-id=0-1&t=zwhxVulfH8JugfuC-1'
+    },
+    {
+      title: 'BOC Smart App Redesign',
+      category: 'UI/UX',
+      img: '/assets/BOC.png',
+      description: 'I redesigned the BOC Smart App to bridge the gap between legacy banking and modern user needs. My focus was shifting from a dated aesthetic to a professional, high-security interface with improved ergonomics.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Visual Hierarchy: BOC Deep Blue for authority/safety',
+        'Thumb-Driven UI: Relocated key actions for ergonomics',
+        'Structural Clarity: Rounded cards for navigation',
+        'Streamlined multi-factor authentication flow',
+        'Modernized dashboard with real-time balance tracking'
       ],
       figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?node-id=26-2&t=Vf5q3Pj5PQN5qBkm-1'
     }, {
@@ -55,6 +72,38 @@ const ProjectGallery = () => {
       ],
       figmaUrl: 'https://www.figma.com/design/ZS4utf9pNNkLRjDFMHMONF/Karusan-mobile-app?node-id=0-1&t=YOJKGhFI8XyEXa1i-1'
     },
+
+    {
+      title: 'TalkGov - Government Services Portal',
+      category: 'UI/UX',
+      img: '/assets/6.png',
+      description: 'A user-friendly web interface designed for South Australian citizens to access government services easily, search for offices, and track service requests.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Service search functionality',
+        'Popular services quick access',
+        'Location-based office finder',
+        'Document checklist generator',
+        'Request tracking system'
+      ],
+      figmaUrl: 'https://www.figma.com/design/f8BVqBylMRxPiuHNqighxm/TalkGov?node-id=0-1&t=hNIZl2LRp1pIT5jH-1'
+    },
+    {
+      title: 'ABC Resort & Spa - Luxury Landing Page',
+      category: 'UI/UX',
+      img: '/assets/7.png',
+      description: 'A sophisticated landing page design for a luxury resort. The minimalistic approach captures the essence of luxury through elegant typography and a calm color palette.',
+      software: 'Figma',
+      role: 'UI/UX Designer',
+      features: [
+        'Hero section with call-to-action',
+        'Brand storytelling through typography',
+        'Responsive layout',
+        'Luxury-focused visual hierarchy'
+      ],
+      figmaUrl: 'https://www.figma.com/design/lWvhOmMmGGE4yzXQ5hhGat/design?node-id=1-2&t=4R0Fjr7Od77HWWUt-1'
+    },
     {
       title: 'Mobile Authentication Interface',
       category: 'UI/UX',
@@ -87,67 +136,37 @@ const ProjectGallery = () => {
       ],
       figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?node-id=7-60&t=YOJKGhFI8XyEXa1i-1'
     },
-    {
-      title: 'TalkGov - Government Services Portal',
-      category: 'UI/UX',
-      img: '/assets/6.png',
-      description: 'A user-friendly web interface designed for South Australian citizens to access government services easily, search for offices, and track service requests.',
-      software: 'Figma',
-      role: 'UI/UX Designer',
-      features: [
-        'Service search functionality',
-        'Popular services quick access',
-        'Location-based office finder',
-        'Document checklist generator',
-        'Request tracking system'
-      ],
-      figmaUrl: 'https://www.figma.com/design/f8BVqBylMRxPiuHNqighxm/TalkGov?node-id=0-1&t=hNIZl2LRp1pIT5jH-1'
-    },
-    {
-      title: 'ABC Resort & Spa - Luxury Landing Page',
-      category: 'UI/UX',
-      img: '/assets/7.png',
-      description: 'A sophisticated landing page design for a luxury resort. The minimalistic approach captures the essence of luxury through elegant typography and a calm color palette.',
-      software: 'Figma',
-      role: 'UI/UX Designer',
-      features: [
-        'Hero section with call-to-action',
-        'Brand storytelling through typography',
-        'Responsive layout',
-        'Luxury-focused visual hierarchy'
-      ],
-      figmaUrl: 'https://www.figma.com/design/lWvhOmMmGGE4yzXQ5hhGat/design?node-id=1-2&t=4R0Fjr7Od77HWWUt-1'
-    },
     //*mobile app project start
     {
       title: 'PerimeterCalculator',
       category: 'Mobile App',
+      software: 'Android Studio',
       img: '/assets/calculator.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/PerimeterCalculator.git'
+      githubUrl: 'https://github.com/NethmaCharuni/PerimeterCalculator'
     },
     {
       title: 'Gym Management System',
       category: 'Mobile App',
+      software: 'Android Studio, Flutter',
       img: '/assets/gum.mp4',
-      githubUrl: 'https://github.com/nethma-charuni/Gym-Management-System'
+      githubUrl: 'https://github.com/NethmaCharuni/Gym-Management-System'
     },
-
     //*frontend project start
     {
       title: 'Hospital Management System',
       category: 'Frontend',
+      software: 'VS Code,HTML,CSS,JavaScript',
       img: '/assets/hospital.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/Hopital-management-system.git'
+      githubUrl: 'https://github.com/NethmaCharuni/Hospital-Management-System'
     },
-
     //*full stack project start
     {
       title: 'Melody Master E-Commerce Website',
       category: 'Full Stack',
+      software: 'VS Code,PHP,MySQL',
       img: '/assets/melodymaster.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/melody-masters-ecommerce.git'
+      githubUrl: 'https://github.com/NethmaCharuni/MelodyMaster'
     },
-
     //*graphic project start
     {
       title: "Allusion'25",
@@ -260,48 +279,132 @@ const ProjectGallery = () => {
     ? projects
     : projects.filter(p => p.category === filter);
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % filteredProjects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
+  };
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    setCurrentIndex(0);
+  };
+
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) setItemsPerPage(3);
+      else if (window.innerWidth > 768) setItemsPerPage(2);
+      else setItemsPerPage(1);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const FigmaIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 28.5C19 25.4835 20.2116 22.5907 22.3683 20.4652C24.5249 18.3397 27.4497 17.1458 30.5 17.1458C33.5503 17.1458 36.4751 18.3397 38.6317 20.4652C40.7884 22.5907 42 25.4835 42 28.5V39.9167H30.5C27.4497 39.9167 24.5249 38.7228 22.3683 36.5973C20.2116 34.4718 19 31.589 19 28.5Z" fill="#1ABCFE" />
+      <path d="M0 45.625C0 42.6085 1.2116 39.7157 3.36827 37.5902C5.52494 35.4647 8.44974 34.2708 11.5 34.2708H23V45.625C23 48.6415 21.7884 51.5343 19.6317 53.6598C17.4751 55.7853 14.5503 56.9792 11.5 56.9792C8.44974 56.9792 5.52494 55.7853 3.36827 53.6598C1.2116 51.5343 0 48.6415 0 45.625V45.625Z" fill="#0ACF83" />
+      <path d="M0 28.5C0 25.4835 1.2116 22.5907 3.36827 20.4652C5.52494 18.3397 8.44974 17.1458 11.5 17.1458H23V39.9167H11.5C8.44974 39.9167 5.52494 38.7228 3.36827 36.5973C1.2116 34.4718 0 31.589 0 28.5V28.5Z" fill="#A259FF" />
+      <path d="M0 11.375C0 8.35852 1.2116 5.4657 3.36827 3.34023C5.52494 1.21475 8.44974 0.0208333 11.5 0.0208333H23V22.7917H11.5C8.44974 22.7917 5.52494 21.5977 3.36827 19.4723C1.2116 17.3468 0 14.454 0 11.375V11.375Z" fill="#F24E1E" />
+      <path d="M23 0.0208333H34.5C37.5503 0.0208333 40.4751 1.21475 42.6317 3.34023C44.7884 5.4657 46 8.35852 46 11.375C46 14.3915 44.7884 17.2843 42.6317 19.4098C40.4751 21.5353 37.5503 22.7292 34.5 22.7292H23V0.0208333Z" fill="#FF7262" />
+    </svg>
+  );
+
+
+  const renderCategoryIcons = (category) => {
+    switch (category) {
+      case 'UI/UX':
+        return <FigmaIcon />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="section-header">
-        <h2 className="text-gradient">Featured Projects</h2>
-        <p>A collection of my recent work in design and development</p>
+        <h2 className="section-title">My Projects</h2>
+        <p className="section-subtitle">Practical projects showcasing development & design experience.</p>
       </div>
 
-      <div className="filter-container">
-        {['All', 'UI/UX', 'Mobile App', 'Frontend', 'Full Stack', 'Graphic Design'].map((cat) => (
+      <div className="filter-container animate-fade-up">
+        {['All', 'UI/UX', 'Mobile App', 'Frontend', 'Full Stack', 'Graphic Design'].map((cat, fIdx) => (
           <button
             key={cat}
             className={`filter-btn ${filter === cat ? 'active' : ''}`}
-            onClick={() => setFilter(cat)}
+            onClick={() => handleFilterChange(cat)}
+            style={{ animationDelay: `${0.1 + fIdx * 0.05}s` }}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      <div className="projects-grid">
-        {filteredProjects.map((proj, idx) => (
+      <div className="carousel-main-container">
+        <button className="nav-arrow prev" onClick={prevSlide}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <div className="carousel-view">
           <div
-            key={idx}
-            className="project-card"
-            onClick={() => setSelectedProject(proj)}
+            className="projects-slider"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+              transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
           >
-            <div className="project-image">
-              {proj.img.endsWith('.mp4') ? (
-                <video src={proj.img} autoPlay muted loop playsInline className="project-video" />
-              ) : (
-                <img src={proj.img} alt={proj.title} />
-              )}
-              <div className="project-overlay">
-                <span>View Project</span>
+            {filteredProjects.map((proj, idx) => (
+              <div
+                key={`${filter}-${idx}`}
+                className="project-card-outer animate-fade-up"
+                style={{ animationDelay: `${0.2 + (idx % itemsPerPage) * 0.1}s` }}
+                onClick={() => setSelectedProject(proj)}
+              >
+                <div className="project-card-inner">
+                  <div className="project-img-container">
+                    {proj.img.endsWith('.mp4') ? (
+                      <video src={proj.img} autoPlay muted loop playsInline />
+                    ) : (
+                      <img src={proj.img} alt={proj.title} />
+                    )}
+                    <div className="overlay-plus">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="project-details">
+                    <span className="proj-cat-badge">{proj.category}</span>
+                    <h3 className="proj-title">{proj.title}</h3>
+                    <div className="proj-footer">
+                      <div className="icon-group">
+                        {renderCategoryIcons(proj.category)}
+                      </div>
+                      <div className="arrow-link-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="project-info">
-              <span className="project-cat">{proj.category}</span>
-              <h3>{proj.title}</h3>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <button className="nav-arrow next" onClick={nextSlide}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
 
       {selectedProject && (
@@ -324,24 +427,13 @@ const ProjectGallery = () => {
                 <div className="details-grid">
                   <div className="detail-item">
                     <h4>Software</h4>
-                    <p>{selectedProject.software}</p>
+                    <p>{selectedProject.software || 'Not specified'}</p>
                   </div>
                   <div className="detail-item">
                     <h4>Role</h4>
                     <p>{selectedProject.role || 'Designer & Developer'}</p>
                   </div>
                 </div>
-
-                {selectedProject.features && (
-                  <div className="features-section">
-                    <h4>Key Features</h4>
-                    <ul>
-                      {selectedProject.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
 
                 <div className="modal-actions">
                   {selectedProject.figmaUrl && (
@@ -350,10 +442,11 @@ const ProjectGallery = () => {
                     </a>
                   )}
                   {selectedProject.githubUrl && (
-                    <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-outline">
+                    <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                       View Code
                     </a>
                   )}
+
                 </div>
               </div>
             </div>
@@ -363,339 +456,374 @@ const ProjectGallery = () => {
 
       <style jsx>{`
         .projects-section {
-          background-color: var(--bg-accent);
-          padding-top: 100px;
-          padding-bottom: 120px;
+          background-color: var(--bg-light);
+          padding: 140px 0;
+          position: relative;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 80px;
+          padding: 0 8%;
         }
 
-        .section-header h2 {
-          font-size: 48px;
-          margin-bottom: 12px;
-          color: var(--text-primary);
+        .section-title {
+          font-size: 40px;
+          color: white;
+          margin-bottom: 15px;
+          font-weight: 800;
         }
 
-        .section-header p {
+        .section-subtitle {
           color: var(--text-secondary);
-          font-size: 18px;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
         }
 
         .filter-container {
           display: flex;
           justify-content: center;
           gap: 12px;
-          margin-bottom: 50px;
+          margin-bottom: 60px;
           flex-wrap: wrap;
         }
 
         .filter-btn {
-          padding: 10px 24px;
+          padding: 10px 28px;
           border-radius: 100px;
-          border: 1px solid var(--border-light);
-          background: white;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.02);
           color: var(--text-secondary);
           font-weight: 600;
           cursor: pointer;
           transition: var(--transition);
-          font-size: 15px;
+          font-size: 14px;
         }
 
         .filter-btn:hover {
-          border-color: var(--accent);
-          color: var(--accent);
+          border-color: var(--accent-border);
+          color: white;
+          background: rgba(255, 77, 0, 0.05);
         }
 
         .filter-btn.active {
           background: var(--accent);
           color: white;
           border-color: var(--accent);
-          box-shadow: var(--shadow-md);
+          box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
         }
 
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 30px;
+        .carousel-main-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          padding: 0 5%;
+          gap: 20px;
         }
 
-        .project-card {
-          background: var(--bg-card);
-          border-radius: 24px;
+        .carousel-view {
+          width: 100%;
+          max-width: 1400px;
           overflow: hidden;
-          border: 1px solid var(--border-light);
-          transition: var(--transition);
+          padding: 20px 0;
+        }
+
+        .projects-slider {
+          display: flex;
+          width: 100%;
+        }
+
+        .project-card-outer {
+          flex: 0 0 33.333%;
+          padding: 0 15px;
           cursor: pointer;
         }
 
-        .project-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0, 168, 255, 0.2);
-          border-color: var(--accent);
-        }
-
-        .project-image {
-          position: relative;
-          height: 260px;
-          overflow: hidden;
-          background: var(--bg-accent);
-        }
-
-        .project-image img, 
-        .project-video {
-          width: 100%;
+        .project-card-inner {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 28px;
+          padding: 24px;
           height: 100%;
-          object-fit: cover;
           transition: var(--transition);
+          display: flex;
+          flex-direction: column;
+          backdrop-filter: blur(10px);
         }
 
-        .project-card:hover .project-image img,
-        .project-card:hover .project-video {
-          transform: scale(1.08);
+        .project-card-outer:hover .project-card-inner {
+          border-color: var(--accent-border);
+          background: rgba(255, 255, 255, 0.04);
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 77, 0, 0.1);
         }
 
-        .project-overlay {
+        .project-img-container {
+          width: 100%;
+          aspect-ratio: 1.4;
+          overflow: hidden;
+          border-radius: 20px;
+          background: #000;
+          margin-bottom: 25px;
+          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .overlay-plus {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to top, rgba(1, 22, 39, 0.95), transparent);
+          background: rgba(255, 77, 0, 0.2);
           display: flex;
-          align-items: flex-end;
+          align-items: center;
           justify-content: center;
-          padding-bottom: 30px;
           opacity: 0;
           transition: var(--transition);
-        }
-
-        .project-overlay span {
           color: white;
-          font-weight: 700;
-          font-size: 16px;
-          transform: translateY(10px);
-          transition: var(--transition);
-          background: rgba(255,255,255,0.05);
-          padding: 8px 20px;
-          border-radius: 100px;
           backdrop-filter: blur(4px);
-          border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .project-card:hover .project-overlay {
+        .project-card-outer:hover .overlay-plus {
           opacity: 1;
         }
 
-        .project-card:hover .project-overlay span {
-          transform: translateY(0);
+        .project-img-container img,
+        .project-img-container video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .project-info {
-          padding: 25px;
+        .project-card-outer:hover img,
+        .project-card-outer:hover video {
+          transform: scale(1.1);
         }
 
-        .project-cat {
+        .proj-cat-badge {
           font-size: 11px;
           font-weight: 700;
           color: var(--accent);
           text-transform: uppercase;
           letter-spacing: 1.5px;
           display: block;
-          margin-bottom: 8px;
+          margin-bottom: 10px;
         }
 
-        .project-info h3 {
-          font-size: 22px;
-          color: var(--text-primary);
+        .proj-title {
+          font-size: 19px;
+          color: white;
+          font-weight: 800;
+          margin-bottom: 15px;
           line-height: 1.3;
+        }
+
+        .proj-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: auto;
+          padding-top: 15px;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .icon-group {
+          color: var(--accent);
+          opacity: 0.8;
+        }
+
+        .arrow-link-icon {
+          color: var(--text-muted);
+          transition: var(--transition);
+        }
+
+        .project-card-outer:hover .arrow-link-icon {
+          color: var(--accent);
+          transform: translate(3px, -3px);
+        }
+
+        .nav-arrow {
+          width: 56px;
+          height: 56px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 50%;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: var(--transition);
+          z-index: 10;
+          flex-shrink: 0;
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-arrow:hover {
+          background: var(--accent);
+          border-color: var(--accent);
+          transform: scale(1.1);
+          box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
         }
 
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(1, 22, 39, 0.85);
-          backdrop-filter: blur(10px);
+          background: rgba(0,0,0,0.85);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
           z-index: 2000;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 20px;
+          animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         .modal-content {
-          background: var(--bg-card);
+          background: #080808;
           width: 100%;
           max-width: 1100px;
           max-height: 90vh;
-          border-radius: 30px;
           overflow-y: auto;
+          border-radius: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
           position: relative;
-          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-          border: 1px solid var(--border-light);
-        }
-
-        .close-btn {
-          position: absolute;
-          top: 25px;
-          right: 25px;
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
-          background: var(--bg-accent);
-          border: 1px solid var(--border-light);
-          font-size: 28px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 10;
-          transition: var(--transition);
-          color: var(--text-muted);
-        }
-
-        .close-btn:hover {
-          background: var(--accent);
-          color: #011627;
-          transform: rotate(90deg);
+          box-shadow: 0 50px 100px rgba(0,0,0,0.8);
         }
 
         .modal-body {
           display: grid;
-          grid-template-columns: 1.3fr 1fr;
+          grid-template-columns: 1.1fr 0.9fr;
         }
 
         .modal-image {
-          background: rgba(0, 0, 0, 0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-right: 1px solid var(--border-light);
-          min-height: 500px;
+          position: relative;
+          background: #000;
         }
 
-        .modal-image img, 
+        .modal-image img,
         .modal-image video {
           width: 100%;
-          height: auto;
-          max-height: 85vh;
-          object-fit: contain;
-          padding: 30px;
-          filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         .modal-details {
-          padding: 60px 50px;
+          padding: 60px;
           display: flex;
           flex-direction: column;
         }
 
         .modal-details h2 {
           font-size: 36px;
-          margin-bottom: 20px;
-          color: var(--accent-secondary);
+          color: white;
+          margin-bottom: 24px;
           line-height: 1.2;
         }
 
-        .description {
+        .modal-details .description {
           color: var(--text-secondary);
-          font-size: 17px;
+          line-height: 1.7;
           margin-bottom: 35px;
-          line-height: 1.8;
+          font-size: 16px;
         }
 
         .details-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 30px;
-          margin-bottom: 35px;
-          padding: 25px;
-          background: var(--bg-accent);
+          gap: 25px;
+          margin-bottom: 40px;
+          padding: 24px;
+          background: rgba(255, 255, 255, 0.02);
           border-radius: 20px;
-          border: 1px solid var(--accent-border);
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .detail-item h4 {
-          font-size: 13px;
+          font-size: 12px;
           text-transform: uppercase;
-          color: var(--text-muted);
+          color: var(--accent);
+          letter-spacing: 1px;
           margin-bottom: 8px;
-          letter-spacing: 1.5px;
-          font-weight: 700;
         }
 
         .detail-item p {
-          font-weight: 700;
-          color: var(--text-primary);
-          font-size: 16px;
-        }
-
-        .features-section h4 {
-          font-size: 18px;
-          margin-bottom: 18px;
-          color: var(--accent-secondary);
-          font-weight: 800;
-        }
-
-        .features-section ul {
-          list-style: none;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          margin-bottom: 45px;
-        }
-
-        .features-section li {
-          position: relative;
-          padding-left: 28px;
-          color: var(--text-secondary);
+          color: white;
+          font-weight: 600;
           font-size: 15px;
-          font-weight: 500;
         }
 
-        .features-section li::before {
-          content: '✓';
+        .close-btn {
           position: absolute;
-          left: 0;
-          color: var(--accent);
-          font-weight: 900;
+          top: 30px;
+          right: 30px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: white;
+          font-size: 24px;
+          cursor: pointer;
+          z-index: 100;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: var(--transition);
+        }
+
+        .close-btn:hover {
+          background: var(--accent);
+          border-color: var(--accent);
+          transform: rotate(90deg);
         }
 
         .modal-actions {
           display: flex;
-          gap: 15px;
+          gap: 20px;
           margin-top: auto;
         }
 
-        .modal-actions .btn-primary, 
-        .modal-actions .btn-outline {
-          flex: 1;
-          justify-content: center;
-          font-size: 15px;
-          padding: 14px;
+        @media (max-width: 1100px) {
+          .project-card-outer {
+            flex: 0 0 50%;
+          }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
           .modal-body {
             grid-template-columns: 1fr;
           }
-          .modal-image {
-            border-right: none;
-            border-bottom: 1px solid var(--border-light);
-            min-height: auto;
-          }
           .modal-details {
-            padding: 40px 30px;
+            padding: 40px;
           }
-          .projects-grid {
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          .modal-image {
+             aspect-ratio: 16/9;
           }
-          .section-header h2 {
-            font-size: 36px;
+        }
+
+        @media (max-width: 768px) {
+          .project-card-outer {
+            flex: 0 0 100%;
+          }
+          .section-title {
+            font-size: 38px;
+          }
+          .nav-arrow {
+            width: 48px;
+            height: 48px;
           }
         }
       `}</style>
-    </section>
+    </section >
   );
 };
 
