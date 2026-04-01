@@ -11,7 +11,7 @@ const ProjectGallery = () => {
       category: 'UI/UX',
       img: '/assets/BOC.png',
       description: 'A comprehensive redesign of the Bank of Ceylon (BOC) mobile banking application. This project focuses on transforming the traditional banking interface into a modern, user-centric digital experience, improving usability and visual hierarchy.',
-      software: 'Figma, Photoshop',
+      software: 'Figma',
       role: 'UI/UX Designer',
       features: [
         'Before vs After design comparison',
@@ -20,7 +20,8 @@ const ProjectGallery = () => {
         'Simplified transaction and service flows',
         'Enhanced visual language and accessibility',
         'User-centric interface optimization'
-      ]
+      ],
+      figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?node-id=26-2&t=Vf5q3Pj5PQN5qBkm-1'
     }, {
       title: 'AI-Powered Analytics Dashboard',
       category: 'UI/UX',
@@ -36,7 +37,7 @@ const ProjectGallery = () => {
         'Customizable dashboard widgets',
         'Dark/Light mode support'
       ],
-      figmaUrl: 'https://www.figma.com/design/unL66lW6wFGhnAJDmnn6io/AI-Personalized-Interfaces?node-id=0-1&t=YOJKGhFI8XyEXa1i-1'
+      figmaUrl: 'https://www.figma.com/design/mcm5rhZhTgs8lG5z6YKeji/simple-login?node-id=26-2&t=Vf5q3Pj5PQN5qBkm-1'
     },
     {
       title: 'Karusan Travels - Booking App',
