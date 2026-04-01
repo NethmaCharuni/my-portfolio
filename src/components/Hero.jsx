@@ -61,17 +61,27 @@ const Hero = ({ avatarUrl }) => {
           align-items: center;
           justify-content: space-between;
           min-height: 100vh;
-          padding-top: 150px;
+          padding-top: 100px;
           gap: 50px;
+          background-color: var(--bg-light);
         }
 
         .hero-content {
-          flex: 1;
+          flex: 1.2;
         }
 
         .greeting {
-          font-size: 56px;
-          margin-bottom: 24px;
+          font-size: 64px;
+          margin-bottom: 20px;
+          line-height: 1.1;
+          color: white;
+        }
+
+        .text-gradient {
+          background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .bio {
@@ -79,6 +89,8 @@ const Hero = ({ avatarUrl }) => {
           color: var(--text-secondary);
           margin-bottom: 40px;
           max-width: 600px;
+          font-weight: 400;
+          line-height: 1.6;
         }
 
         .hero-actions {
@@ -100,17 +112,23 @@ const Hero = ({ avatarUrl }) => {
           flex-direction: column;
           overflow: hidden;
           z-index: 100;
+          background: var(--bg-card);
+          border: 1px solid var(--border-light);
+          box-shadow: var(--shadow-lg);
+          border-radius: 12px;
         }
 
         .dropdown-item {
           padding: 15px 20px;
-          color: var(--text-primary);
+          color: white;
           text-decoration: none;
           transition: var(--transition);
+          font-size: 14px;
+          font-weight: 500;
         }
 
         .dropdown-item:hover {
-          background: rgba(255, 157, 0, 0.1);
+          background: var(--bg-accent);
           color: var(--accent);
         }
 
@@ -122,53 +140,57 @@ const Hero = ({ avatarUrl }) => {
         }
 
         .image-blob {
-          width: 450px;
-          height: 450px;
-          background: linear-gradient(135deg, rgba(255, 157, 0, 0.2), transparent);
-          border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+          width: 480px;
+          height: 480px;
+          background: #8ecae6;
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
           display: flex;
           align-items: center;
           justify-content: center;
           animation: morph 8s ease-in-out infinite;
-          border: 1px solid var(--glass-border);
+          border: none;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes morph {
-          0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-          50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+          0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+          50% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
         }
 
         .hero-avatar {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+          filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
           transform: scale(1.1);
           transform-origin: bottom;
         }
 
         .hi-badge {
           position: absolute;
-          top: 10%;
+          top: 15%;
           right: 15%;
-          background: var(--accent);
-          color: var(--bg-dark);
-          padding: 10px 20px;
+          background: var(--bg-card);
+          color: var(--accent);
+          padding: 12px 24px;
           border-radius: 20px 20px 20px 0;
           font-weight: 700;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+          box-shadow: var(--shadow-md);
           animation: float 3s ease-in-out infinite;
+          border: 1px solid var(--accent-border);
         }
 
         @keyframes float {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+          50% { transform: translateY(-12px); }
         }
 
         @media (max-width: 1024px) {
           .hero-section {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
+            padding-top: 120px;
+            gap: 30px;
           }
           .hero-actions {
             justify-content: center;
@@ -180,6 +202,9 @@ const Hero = ({ avatarUrl }) => {
           .image-blob {
             width: 320px;
             height: 320px;
+          }
+          .greeting {
+            font-size: 40px;
           }
         }
       `}</style>
