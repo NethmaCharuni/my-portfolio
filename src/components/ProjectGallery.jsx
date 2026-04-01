@@ -7,6 +7,21 @@ const ProjectGallery = () => {
   const projects = [
     //* UI/UX projects
     {
+      title: 'Bank of Ceylon (BOC) - Mobile App Redesign',
+      category: 'UI/UX',
+      img: '/assets/BOC.png',
+      description: 'A comprehensive redesign of the Bank of Ceylon (BOC) mobile banking application. This project focuses on transforming the traditional banking interface into a modern, user-centric digital experience, improving usability and visual hierarchy.',
+      software: 'Figma, Photoshop',
+      role: 'UI/UX Designer',
+      features: [
+        'Before vs After design comparison',
+        'Streamlined user authentication flow',
+        'Modernized dashboard and navigation',
+        'Simplified transaction and service flows',
+        'Enhanced visual language and accessibility',
+        'User-centric interface optimization'
+      ]
+    }, {
       title: 'AI-Powered Analytics Dashboard',
       category: 'UI/UX',
       img: '/assets/AI.png',
