@@ -87,7 +87,7 @@ const ProjectGallery = () => {
         'Document checklist generator',
         'Request tracking system'
       ],
-      figmaUrl: 'https://www.figma.com/design/f8BVqBylMRxPiuHNqighxm/TalkGov?node-id=0-1&t=hNIZl2LRp1pIT5jH-1'
+      figmaUrl: 'https://www.figma.com/design/f8BVqBylMRxPiuHNqighxm/TalkGov?node-id=0-1&t=WlEY3p0cbJ1zJVQR-1'
     },
     {
       title: 'ABC Resort & Spa - Luxury Landing Page',
@@ -148,8 +148,8 @@ const ProjectGallery = () => {
       title: 'Gym Management System',
       category: 'Mobile App',
       software: 'Android Studio, Flutter',
-      img: '/assets/gum.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/Gym-Management-System'
+      img: '/assets/gym.mp4',
+      githubUrl: 'https://github.com/NethmaCharuni/GymMobileApp'
     },
     //*frontend project start
     {
@@ -157,7 +157,7 @@ const ProjectGallery = () => {
       category: 'Frontend',
       software: 'VS Code,HTML,CSS,JavaScript',
       img: '/assets/hospital.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/Hospital-Management-System'
+      githubUrl: 'https://github.com/NethmaCharuni/Hopital-management-system'
     },
     //*full stack project start
     {
@@ -165,7 +165,7 @@ const ProjectGallery = () => {
       category: 'Full Stack',
       software: 'VS Code,PHP,MySQL',
       img: '/assets/melodymaster.mp4',
-      githubUrl: 'https://github.com/NethmaCharuni/MelodyMaster'
+      githubUrl: 'https://github.com/NethmaCharuni/melody-masters-ecommerce'
     },
     //*graphic project start
     {
